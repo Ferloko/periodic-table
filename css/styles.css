@@ -1,0 +1,397 @@
+:root {
+    --alkali-metal: #ff9d2e;
+    --alkaline-earth: #ffc40c;
+    --transition-metal: #ff6b6b;
+    --post-transition: #a1b2c3;
+    --metalloid: #2ecc71;
+    --nonmetal: #3498db;
+    --halogen: #9b59b6;
+    --noble-gas: #e74c3c;
+    --lanthanide: #1abc9c;
+    --actinide: #e67e22;
+    --unknown: #95a5a6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f6fa;
+    color: #2c3e50;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0 30px;
+    color: #2c3e50;
+    font-size: 2.5em;
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 30px 0;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 2px;
+}
+
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    gap: 5px;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.element {
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.element:hover {
+    transform: scale(1.08);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.element .number {
+    font-size: 0.7rem;
+    align-self: flex-start;
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.element .symbol {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 8px 0 4px;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.element .name {
+    font-size: 0.7rem;
+    text-align: center;
+    word-break: break-word;
+    padding: 0 2px;
+    opacity: 0.9;
+}
+
+.element .details-btn {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    background: rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.element:hover .details-btn {
+    opacity: 1;
+}
+
+/* Element categories */
+.alkali-metal { background-color: var(--alkali-metal); }
+.alkaline-earth { background-color: var(--alkaline-earth); }
+.transition-metal { background-color: var(--transition-metal); }
+.post-transition { background-color: var(--post-transition); }
+.metalloid { background-color: var(--metalloid); }
+.nonmetal { background-color: var(--nonmetal); color: white; }
+.halogen { background-color: var(--halogen); color: white; }
+.noble-gas { background-color: var(--noble-gas); color: white; }
+.lanthanide { background-color: var(--lanthanide); }
+.actinide { background-color: var(--actinide); }
+.unknown { background-color: var(--unknown); }
+
+/* Empty cells for layout */
+.empty-cell {
+    visibility: hidden;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #7f8c8d;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-btn:hover {
+    color: #e74c3c;
+    background-color: #f8f9fa;
+}
+
+.element-details h2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f1f2f6;
+    color: #2c3e50;
+}
+
+.element-details h2 .symbol {
+    font-size: 2em;
+    font-weight: bold;
+    background: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.element-details .property {
+    margin: 15px 0;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.element-details .property:last-child {
+    border-bottom: none;
+}
+
+.element-details .property strong {
+    color: #7f8c8d;
+    margin-right: 8px;
+    display: inline-block;
+    min-width: 160px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .periodic-table {
+        grid-template-columns: repeat(18, minmax(40px, 1fr));
+        gap: 4px;
+    }
+    
+    .element .symbol {
+        font-size: 1.2rem;
+    }
+    
+    .element .name {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .periodic-table {
+        grid-template-columns: repeat(9, 1fr);
+    }
+    
+    .element {
+        aspect-ratio: 1/1;
+    }
+}
+
+@media (max-width: 768px) {
+    .periodic-table {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    
+    .element .symbol {
+        font-size: 1.1rem;
+    }
+    
+    .element .name {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .periodic-table {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .legend {
+        gap: 8px;
+    }
+    
+    .legend-item {
+        font-size: 0.8rem;
+        padding: 3px 6px;
+    }
+    
+    .legend-color {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Special positioning for the lanthanides and actinides */
+.element[data-atomic-number="57"] {
+    border-top-left-radius: 20px;
+}
+
+.element[data-atomic-number="71"] {
+    border-top-right-radius: 20px;
+}
+
+.element[data-atomic-number="89"] {
+    border-bottom-left-radius: 20px;
+}
+
+.element[data-atomic-number="103"] {
+    border-bottom-right-radius: 20px;
+}
+
+/* Special styling for the lanthanides and actinides rows */
+.element.lanthanide, .element.actinide {
+    border-radius: 0;
+}
+
+/* Add margin between the main table and the lanthanides/actinides */
+.periodic-table::after {
+    content: '';
+    grid-column: 1 / -1;
+    height: 20px;
+}
+
+/* Special styling for the gap between the main table and lanthanides/actinides */
+.gap {
+    grid-column: 1 / -1;
+    height: 20px;
+}
+
+/* Special styling for the lanthanides and actinides rows */
+.lanthanides-row, .actinides-row {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    gap: 5px;
+    margin-top: 5px;
+}
+
+/* Adjust the position of the lanthanides and actinides */
+.lanthanides-row {
+    grid-row: 8;
+}
+
+.actinides-row {
+    grid-row: 9;
+}
+
+/* Special styling for the gap in the periodic table */
+.gap-1 {
+    grid-column: 1 / 3;
+}
+
+.gap-2 {
+    grid-column: 4 / 12;
+}
+
+/* Special styling for the lanthanides and actinides label */
+.lanthanides-label, .actinides-label {
+    grid-column: 1 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Special styling for the lanthanides and actinides container */
+.lanthanides-container, .actinides-container {
+    grid-column: 3 / -1;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    gap: 5px;
+}
