@@ -11,19 +11,28 @@
 </head>
 <body>
     <div class="container">
+        <button id="compoundsBtn" class="compounds-btn">Ver Compuestos ▼</button>
+        <div id="compoundsMenu" class="compounds-menu">
+            <div class="compounds-search">
+                <input type="text" id="compoundSearch" placeholder="Buscar compuesto...">
+            </div>
+            <div class="compounds-list" id="compoundsList">
+                <!-- Los compuestos se cargarán aquí dinámicamente -->
+            </div>
+        </div>
         <h1>Tabla Periódica Interactiva</h1>
         
         <div class="legend">
-            <div class="legend-item"><div class="legend-color" style="background-color: var(--alkali-metal)"></div> Metales alcalinos</div>
-            <div class="legend-item"><div class="legend-color" style="background-color: var(--alkaline-earth)"></div> Alcalinotérreos</div>
-            <div class="legend-item"><div class="legend-color" style="background-color: var(--transition-metal)"></div> Metales de transición</div>
-            <div class="legend-item"><div class="legend-color" style="background-color: var(--post-transition)"></div> Metales del bloque p</div>
-            <div class="legend-item"><div class="legend-color" style="background-color: var(--metalloid)"></div> Metaloides</div>
-            <div class="legend-item"><div class="legend-color" style="background-color: var(--nonmetal)"></div> No metales</div>
-            <div class="legend-item"><div class="legend-color" style="background-color: var(--halogen)"></div> Halógenos</div>
-            <div class="legend-item"><div class="legend-color" style="background-color: var(--noble-gas)"></div> Gases nobles</div>
-            <div class="legend-item"><div class="legend-color" style="background-color: var(--lanthanide)"></div> Lantánidos</div>
-            <div class="legend-item"><div class="legend-color" style="background-color: var(--actinide)"></div> Actínidos</div>
+            <div class="legend-item" data-category="alkali-metal"><div class="legend-color" style="background-color: var(--alkali-metal)"></div> Metales alcalinos</div>
+            <div class="legend-item" data-category="alkaline-earth"><div class="legend-color" style="background-color: var(--alkaline-earth)"></div> Alcalinotérreos</div>
+            <div class="legend-item" data-category="transition-metal"><div class="legend-color" style="background-color: var(--transition-metal)"></div> Metales de transición</div>
+            <div class="legend-item" data-category="post-transition"><div class="legend-color" style="background-color: var(--post-transition)"></div> Metales del bloque p</div>
+            <div class="legend-item" data-category="metalloid"><div class="legend-color" style="background-color: var(--metalloid)"></div> Metaloides</div>
+            <div class="legend-item" data-category="nonmetal"><div class="legend-color" style="background-color: var(--nonmetal)"></div> No metales</div>
+            <div class="legend-item" data-category="halogen"><div class="legend-color" style="background-color: var(--halogen)"></div> Halógenos</div>
+            <div class="legend-item" data-category="noble-gas"><div class="legend-color" style="background-color: var(--noble-gas)"></div> Gases nobles</div>
+            <div class="legend-item" data-category="lanthanide"><div class="legend-color" style="background-color: var(--lanthanide)"></div> Lantánidos</div>
+            <div class="legend-item" data-category="actinide"><div class="legend-color" style="background-color: var(--actinide)"></div> Actínidos</div>
         </div>
 
         <div id="periodic-table" class="periodic-table">
@@ -41,8 +50,45 @@
         </div>
     </div>
 
+    <!-- Mezclador de Elementos -->
+    <div class="mixer-container">
+        <h2>Mezclador de Elementos</h2>
+        <div class="mixer-area">
+            <p>Haz clic en el botón "+" de los elementos para añadirlos a la mezcla:</p>
+            <div class="element-slots">
+                <div class="slot" data-slot="1"></div>
+                <div class="slot" data-slot="2"></div>
+                <div class="slot" data-slot="3"></div>
+                <div class="slot" data-slot="4"></div>
+                <div class="slot" data-slot="5"></div>
+            </div>
+            <button id="mixElements" class="mix-btn">Mezclar Elementos</button>
+            <div class="result-area" id="mixResult">
+                <p>Los elementos añadidos aparecerán aquí</p>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript files -->
     <script src="js/data.js"></script>
+    <script>
+        // Cargar los compuestos al inicio
+        window.compoundsDataPromise = fetch('mezclas.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('No se pudo cargar el archivo de compuestos');
+                }
+                return response.json();
+            })
+            .then(compounds => {
+                window.compoundsData = compounds;
+                return compounds;
+            })
+            .catch(error => {
+                console.error('Error al cargar los compuestos:', error);
+                return {};
+            });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>

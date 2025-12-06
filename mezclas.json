@@ -1,0 +1,338 @@
+{
+  "H2O": {
+    "name": "Agua",
+    "formula": "H₂O",
+    "description": "Compuesto esencial para la vida, formado por dos átomos de hidrógeno y uno de oxígeno.",
+    "elements": ["H", "O"]
+  },
+  "CO2": {
+    "name": "Dióxido de Carbono",
+    "formula": "CO₂",
+    "description": "Gas incoloro presente en la atmósfera, esencial para la fotosíntesis.",
+    "elements": ["C", "O"]
+  },
+  "CO": {
+    "name": "Monóxido de Carbono",
+    "formula": "CO",
+    "description": "Gas tóxico incoloro e inodoro, producto de la combustión incompleta.",
+    "elements": ["C", "O"]
+  },
+  "NaCl": {
+    "name": "Cloruro de Sodio",
+    "formula": "NaCl",
+    "description": "Conocido como sal de mesa, compuesto por sodio y cloro.",
+    "elements": ["Na", "Cl"]
+  },
+  "KCl": {
+    "name": "Cloruro de Potasio",
+    "formula": "KCl",
+    "description": "Sal cristalina incolora, usada en fertilizantes y como sustituto de la sal.",
+    "elements": ["K", "Cl"]
+  },
+  "CaCl2": {
+    "name": "Cloruro de Calcio",
+    "formula": "CaCl₂",
+    "description": "Usado para derretir hielo en carreteras y como desecante.",
+    "elements": ["Ca", "Cl"]
+  },
+  "H2O2": {
+    "name": "Peróxido de Hidrógeno",
+    "formula": "H₂O₂",
+    "description": "Conocido como agua oxigenada, usado como desinfectante y blanqueador.",
+    "elements": ["H", "O"]
+  },
+  "CH4": {
+    "name": "Metano",
+    "formula": "CH₄",
+    "description": "Gas incoloro e inodoro, principal componente del gas natural.",
+    "elements": ["C", "H"]
+  },
+  "C2H6": {
+    "name": "Etano",
+    "formula": "C₂H₆",
+    "description": "Segundo hidrocarburo más simple de la serie de los alcanos.",
+    "elements": ["C", "H"]
+  },
+  "C3H8": {
+    "name": "Propano",
+    "formula": "C₃H₈",
+    "description": "Gas licuado del petróleo (GLP) utilizado como combustible.",
+    "elements": ["C", "H"]
+  },
+  "C4H10": {
+    "name": "Butano",
+    "formula": "C₄H₁₀",
+    "description": "Gas combustible usado en encendedores y estufas portátiles.",
+    "elements": ["C", "H"]
+  },
+  "C6H6": {
+    "name": "Benceno",
+    "formula": "C₆H₆",
+    "description": "Hidrocarburo aromático simple, importante en la industria química.",
+    "elements": ["C", "H"]
+  },
+  "C2H4": {
+    "name": "Eteno",
+    "formula": "C₂H₄",
+    "description": "También llamado etileno, importante en la industria química para producir plásticos.",
+    "elements": ["C", "H"]
+  },
+  "C2H2": {
+    "name": "Etino",
+    "formula": "C₂H₂",
+    "description": "Conocido como acetileno, usado en soldadura y corte de metales.",
+    "elements": ["C", "H"]
+  },
+  "C6H12O6": {
+    "name": "Glucosa",
+    "formula": "C₆H₁₂O₆",
+    "description": "Azúcar simple que es una importante fuente de energía en los organismos vivos.",
+    "elements": ["C", "H", "O"]
+  },
+  "C12H22O11": {
+    "name": "Sacarosa",
+    "formula": "C₁₂H₂₂O₁₁",
+    "description": "Azúcar de mesa común, compuesto por glucosa y fructosa.",
+    "elements": ["C", "H", "O"]
+  },
+  "NH3": {
+    "name": "Amoníaco",
+    "formula": "NH₃",
+    "description": "Gas incoloro con un olor característico, utilizado en productos de limpieza y fertilizantes.",
+    "elements": ["N", "H"]
+  },
+  "NH4Cl": {
+    "name": "Cloruro de Amonio",
+    "formula": "NH₄Cl",
+    "description": "Sal cristalina blanca, usada en pilas secas y como fertilizante.",
+    "elements": ["N", "H", "Cl"]
+  },
+  "HNO3": {
+    "name": "Ácido Nítrico",
+    "formula": "HNO₃",
+    "description": "Ácido mineral fuerte, usado en la fabricación de fertilizantes y explosivos.",
+    "elements": ["H", "N", "O"]
+  },
+  "H2SO4": {
+    "name": "Ácido Sulfúrico",
+    "formula": "H₂SO₄",
+    "description": "Ácido mineral fuerte, ampliamente utilizado en la industria química.",
+    "elements": ["H", "S", "O"]
+  },
+  "H3PO4": {
+    "name": "Ácido Fosfórico",
+    "formula": "H₃PO₄",
+    "description": "Usado en bebidas gaseosas y como aditivo alimentario.",
+    "elements": ["H", "P", "O"]
+  },
+  "HClO4": {
+    "name": "Ácido Perclórico",
+    "formula": "HClO₄",
+    "description": "Ácido mineral muy fuerte, usado en análisis químicos y como catalizador.",
+    "elements": ["H", "Cl", "O"]
+  },
+  "CaCO3": {
+    "name": "Carbonato de Calcio",
+    "formula": "CaCO₃",
+    "description": "Componente principal de rocas como la calcita y el mármol, y de conchas marinas.",
+    "elements": ["Ca", "C", "O"]
+  },
+  "Na2CO3": {
+    "name": "Carbonato de Sodio",
+    "formula": "Na₂CO₃",
+    "description": "Conocido como sosa para lavar, usado en la fabricación de vidrio y jabones.",
+    "elements": ["Na", "C", "O"]
+  },
+  "NaHCO3": {
+    "name": "Bicarbonato de Sodio",
+    "formula": "NaHCO₃",
+    "description": "Usado en repostería, como antiácido y en extintores de incendios.",
+    "elements": ["Na", "H", "C", "O"]
+  },
+  "C2H5OH": {
+    "name": "Etanol",
+    "formula": "C₂H₅OH",
+    "description": "Alcohol etílico, usado en bebidas alcohólicas y como combustible.",
+    "elements": ["C", "H", "O"]
+  },
+  "CH3OH": {
+    "name": "Metanol",
+    "formula": "CH₃OH",
+    "description": "El alcohol más simple, usado como disolvente y anticongelante.",
+    "elements": ["C", "H", "O"]
+  },
+  "CH3COOH": {
+    "name": "Ácido Acético",
+    "formula": "CH₃COOH",
+    "description": "Componente principal del vinagre, usado como conservante y condimento.",
+    "elements": ["C", "H", "O"]
+  },
+  "O3": {
+    "name": "Ozono",
+    "formula": "O₃",
+    "description": "Molécula formada por tres átomos de oxígeno, protege de la radiación UV en la estratosfera.",
+    "elements": ["O"]
+  },
+  "Fe2O3": {
+    "name": "Óxido de Hierro (III)",
+    "formula": "Fe₂O₃",
+    "description": "Conocido como óxido férrico o herrumbre, es el principal componente del mineral hematita.",
+    "elements": ["Fe", "O"]
+  },
+  "Fe3O4": {
+    "name": "Óxido de Hierro (II,III)",
+    "formula": "Fe₃O₄",
+    "description": "Conocido como magnetita, mineral magnético de hierro.",
+    "elements": ["Fe", "O"]
+  },
+  "FeO": {
+    "name": "Óxido de Hierro (II)",
+    "formula": "FeO",
+    "description": "Óxido ferroso, componente de algunos minerales de hierro.",
+    "elements": ["Fe", "O"]
+  },
+  "Al2O3": {
+    "name": "Óxido de Aluminio",
+    "formula": "Al₂O₃",
+    "description": "Presente en el mineral corindón, se usa en la producción de aluminio y como abrasivo.",
+    "elements": ["Al", "O"]
+  },
+  "SiO2": {
+    "name": "Dióxido de Silicio",
+    "formula": "SiO₂",
+    "description": "Componente principal de la arena y el cuarzo, usado en vidrio y electrónica.",
+    "elements": ["Si", "O"]
+  },
+  "HCl": {
+    "name": "Ácido Clorhídrico",
+    "formula": "HCl",
+    "description": "Ácido fuerte presente en los jugos gástricos, usado en la industria química.",
+    "elements": ["H", "Cl"]
+  },
+  "NaOH": {
+    "name": "Hidróxido de Sodio",
+    "formula": "NaOH",
+    "description": "También conocido como sosa cáustica, usado en la fabricación de jabones y papel.",
+    "elements": ["Na", "O", "H"]
+  },
+  "KOH": {
+    "name": "Hidróxido de Potasio",
+    "formula": "KOH",
+    "description": "Conocido como potasa cáustica, usado en la fabricación de jabones suaves.",
+    "elements": ["K", "O", "H"]
+  },
+  "Ca(OH)2": {
+    "name": "Hidróxido de Calcio",
+    "formula": "Ca(OH)₂",
+    "description": "Conocido como cal apagada, usado en construcción y tratamiento de aguas.",
+    "elements": ["Ca", "O", "H"]
+  },
+  "NH4OH": {
+    "name": "Hidróxido de Amonio",
+    "formula": "NH₄OH",
+    "description": "Solución acuosa de amoníaco, usada en productos de limpieza.",
+    "elements": ["N", "H", "O"]
+  },
+  "NO": {
+    "name": "Monóxido de Nitrógeno",
+    "formula": "NO",
+    "description": "Gas incoloro, importante en procesos biológicos y contaminante atmosférico.",
+    "elements": ["N", "O"]
+  },
+  "NO2": {
+    "name": "Dióxido de Nitrógeno",
+    "formula": "NO₂",
+    "description": "Gas tóxico de color marrón-rojizo, contaminante atmosférico común.",
+    "elements": ["N", "O"]
+  },
+  "N2O": {
+    "name": "Óxido Nitroso",
+    "formula": "N₂O",
+    "description": "Conocido como gas de la risa, usado como anestésico y propelente.",
+    "elements": ["N", "O"]
+  },
+  "SO2": {
+    "name": "Dióxido de Azufre",
+    "formula": "SO₂",
+    "description": "Gas incoloro con olor irritante, emitido por volcanes y procesos industriales.",
+    "elements": ["S", "O"]
+  },
+  "SO3": {
+    "name": "Trióxido de Azufre",
+    "formula": "SO₃",
+    "description": "Precursor del ácido sulfúrico, se forma al quemar azufre en presencia de oxígeno.",
+    "elements": ["S", "O"]
+  },
+  "P4O10": {
+    "name": "Pentóxido de Difósforo",
+    "formula": "P₄O₁₀",
+    "description": "Agente desecante poderoso, forma ácido fosfórico con agua.",
+    "elements": ["P", "O"]
+  },
+  "PCl5": {
+    "name": "Pentacloruro de Fósforo",
+    "formula": "PCl₅",
+    "description": "Cloruro de fósforo(V), usado como agente clorante en síntesis orgánica.",
+    "elements": ["P", "Cl"]
+  },
+  "SF6": {
+    "name": "Hexafluoruro de Azufre",
+    "formula": "SF₆",
+    "description": "Gas inerte usado en equipos eléctricos de alta tensión.",
+    "elements": ["S", "F"]
+  },
+  "UF6": {
+    "name": "Hexafluoruro de Uranio",
+    "formula": "UF₆",
+    "description": "Compuesto volátil de uranio, utilizado en el enriquecimiento de uranio.",
+    "elements": ["U", "F"]
+  },
+  "XeF4": {
+    "name": "Tetrafluoruro de Xenón",
+    "formula": "XeF₄",
+    "description": "Compuesto de xenón, uno de los primeros gases nobles en formar compuestos.",
+    "elements": ["Xe", "F"]
+  },
+  "Na2O2": {
+    "name": "Peróxido de Sodio",
+    "formula": "Na₂O₂",
+    "description": "Agente oxidante fuerte, usado en la fabricación de papel y textiles.",
+    "elements": ["Na", "O"]
+  },
+  "K2O2": {
+    "name": "Peróxido de Potasio",
+    "formula": "K₂O₂",
+    "description": "Compuesto inestable, se descompone en presencia de agua.",
+    "elements": ["K", "O"]
+  },
+  "MgO2": {
+    "name": "Peróxido de Magnesio",
+    "formula": "MgO₂",
+    "description": "Usado como agente blanqueador y desinfectante.",
+    "elements": ["Mg", "O"]
+  },
+  "CaO2": {
+    "name": "Peróxido de Calcio",
+    "formula": "CaO₂",
+    "description": "Usado como agente blanqueador y en acuarios para oxigenación.",
+    "elements": ["Ca", "O"]
+  },
+  "BaO2": {
+    "name": "Peróxido de Bario",
+    "formula": "BaO₂",
+    "description": "Usado en fuegos artificiales y como fuente de peróxido de hidrógeno.",
+    "elements": ["Ba", "O"]
+  },
+  "ZnO2": {
+    "name": "Peróxido de Zinc",
+    "formula": "ZnO₂",
+    "description": "Usado como agente blanqueador y en la fabricación de caucho.",
+    "elements": ["Zn", "O"]
+  },
+  "Li2O2": {
+    "name": "Peróxido de Litio",
+    "formula": "Li₂O₂",
+    "description": "Usado en baterías recargables de iones de litio.",
+    "elements": ["Li", "O"]
+  }
+}

@@ -46,7 +46,12 @@ h1 {
     z-index: 1;
 }
 
-/* Estilos para el botón de compuestos */
+/* Celdas vacías para el diseño */
+.empty-cell {
+    visibility: hidden;
+}
+
+/* Estilos para los botones de acción */
 .compounds-btn {
     position: fixed;
     top: 20px;
@@ -189,12 +194,14 @@ h1 {
 
 .periodic-table {
     display: grid;
-    grid-template-columns: repeat(18, var(--cell-size));
-    gap: 5px;
-    margin-bottom: 30px;
-    min-width: fit-content;
+    grid-template-columns: repeat(18, 1fr);
+    gap: 6px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .element, .empty-cell {
@@ -223,25 +230,24 @@ h1 {
 }
 
 .element .number {
-    font-size: 0.7rem;
+    font-size: 0.7em;
+    opacity: 0.8;
     align-self: flex-start;
-    line-height: 1;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
+    margin-left: 4px;
 }
 
 .element .symbol {
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin: 4px 0;
     line-height: 1;
-    margin: 2px 0;
-    text-align: center;
 }
 
 .element .name {
-    font-size: 0.6rem;
-    text-align: center;
-    line-height: 1;
-    margin-top: 2px;
+    font-size: 0.6em;
+    opacity: 0.9;
+    margin-top: 4px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -312,17 +318,17 @@ h1 {
 }
 
 /* Estilos para las categorías de elementos */
-.alkali-metal { background-color: var(--alkali-metal); color: #000; }
-.alkaline-earth { background-color: var(--alkaline-earth); color: #000; }
-.transition-metal { background-color: var(--transition-metal); color: #fff; }
-.post-transition { background-color: var(--post-transition); color: #000; }
-.metalloid { background-color: var(--metalloid); color: #000; }
-.nonmetal { background-color: var(--nonmetal); color: #fff; }
-.halogen { background-color: var(--halogen); color: #fff; }
-.noble-gas { background-color: var(--noble-gas); color: #fff; }
-.lanthanide { background-color: var(--lanthanide); color: #000; }
-.actinide { background-color: var(--actinide); color: #000; }
-.unknown { background-color: var(--unknown); color: #000; }
+.alkali-metal { background: linear-gradient(135deg, var(--alkali-metal), #ffb74d); color: white; }
+.alkaline-earth { background: linear-gradient(135deg, var(--alkaline-earth), #ffd54f); color: #2c3e50; }
+.transition-metal { background: linear-gradient(135deg, var(--transition-metal), #ff8a80); color: white; }
+.post-transition { background: linear-gradient(135deg, var(--post-transition), #cfd8dc); color: #2c3e50; }
+.metalloid { background: linear-gradient(135deg, var(--metalloid), #66bb6a); color: white; }
+.nonmetal { background: linear-gradient(135deg, var(--nonmetal), #64b5f6); color: white; }
+.halogen { background: linear-gradient(135deg, var(--halogen), #ba68c8); color: white; }
+.noble-gas { background: linear-gradient(135deg, var(--noble-gas), #ef5350); color: white; }
+.lanthanide { background: linear-gradient(135deg, var(--lanthanide), #26a69a); color: white; }
+.actinide { background: linear-gradient(135deg, var(--actinide), #fb8c00); color: white; }
+.unknown { background: linear-gradient(135deg, var(--unknown), #b0bec5); color: white; }
 
 /* Empty cells for layout */
 .empty-cell {
@@ -330,37 +336,38 @@ h1 {
 }
 
 /* Ajustes responsivos */
-@media (max-width: 1400px) {
-    :root {
-        --cell-size: 65px;
-    }
-}
-
 @media (max-width: 1200px) {
-    :root {
-        --cell-size: 60px;
+    .periodic-table {
+        grid-template-columns: repeat(18, minmax(40px, 1fr));
+        gap: 4px;
+        padding: 10px;
     }
     
     .element .symbol {
-        font-size: 1.2rem;
-    }
-    
-    .element .name {
-        font-size: 0.5rem;
-    }
-}
-
-@media (max-width: 992px) {
-    :root {
-        --cell-size: 55px;
-    }
-    
-    .element .symbol {
-        font-size: 1.1rem;
+        font-size: 1.1em;
     }
     
     .element .name {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .periodic-table {
+        grid-template-columns: repeat(18, minmax(30px, 1fr));
+        gap: 3px;
+    }
+    
+    .element {
+        padding: 6px 2px;
+    }
+    
+    .element .number {
+        font-size: 0.6em;
+    }
+    
+    .element .symbol {
+        font-size: 0.9em;
     }
 }
 
@@ -608,9 +615,9 @@ h1 {
     --unknown: #95a5a6;
     --text-dark: #2c3e50;
     --text-light: #ffffff;
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
     --transition: all 0.3s ease;
 }
 
@@ -633,7 +640,7 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 4px;
+    padding: 8px 4px;
     border-radius: 8px;
     color: var(--text-dark);
     text-align: center;
@@ -788,7 +795,6 @@ h1 {
     background: #f0f2f5;
     border-radius: 8px;
     border: 2px dashed #ccc;
-    justify-content: center;
 }
 
 .slot {
